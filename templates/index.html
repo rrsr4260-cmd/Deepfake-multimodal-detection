@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <title>DeepGuard X | Multimodal Media Forensics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">D<span>×</span></span><span>deepguard<span class="brand-light">.x</span><small>MEDIA FORENSICS</small></span></a>
+    <nav><a href="#how">How it works</a><a href="#about">About</a><span class="status"><i></i> SYSTEM READY</span></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span></span> MULTIMODAL DEEPFAKE DETECTION</div>
+      <h1>Trust what you see.<br><span>Verify what you hear.</span></h1>
+      <p class="hero-copy">An AI-assisted workspace for screening suspicious images, audio, and video. Upload a file to begin your analysis.</p>
+    </section>
+
+    <section class="workspace">
+      <div class="workspace-head"><div><div class="section-kicker">ANALYSIS WORKSPACE</div><h2>Inspect a media file</h2></div><div class="privacy"><span class="lock">⌑</span> Files are deleted after processing</div></div>
+      <form id="uploadForm">
+        <label class="dropzone" id="dropzone" for="mediaInput">
+          <input id="mediaInput" name="media" type="file" accept=".png,.jpg,.jpeg,.webp,.wav,.mp3,.flac,.mp4,.mov,.avi,.mkv">
+          <span class="upload-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0L7 9m5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg></span>
+          <strong id="fileTitle">Drop your file here, or <em>browse</em></strong>
+          <span class="file-hint" id="fileHint">Image · Audio · Video &nbsp; / &nbsp; Maximum 100 MB</span>
+          <span class="file-chip" id="fileChip" hidden></span>
+        </label>
+        <div class="upload-footer"><p><span class="shield">✓</span> Private by design · Temporary processing only</p><button class="primary-btn" id="analyzeBtn" type="submit">Analyze media <span>↗</span></button></div>
+      </form>
+      <div class="progress-wrap" id="progressWrap" hidden><div class="progress-label"><span>Analyzing media…</span><span id="progressText">Processing</span></div><div class="progress-track"><div class="progress-bar"></div></div></div>
+      <div class="result" id="result" hidden aria-live="polite"></div>
+    </section>
+
+    <section class="capabilities" id="how">
+      <div class="section-kicker">BUILT FOR THREE MEDIA TYPES</div>
+      <div class="cap-grid">
+        <article class="cap-card"><div class="cap-icon">▧</div><h3>Visual forensics</h3><p>Image classification and sampled video-frame inspection through a trained visual model.</p><span>IMAGE · VIDEO</span></article>
+        <article class="cap-card"><div class="cap-icon">≋</div><h3>Audio signals</h3><p>Audio preprocessing with log-Mel spectrogram features for a trained audio classifier.</p><span>AUDIO</span></article>
+        <article class="cap-card"><div class="cap-icon">⌁</div><h3>Evidence summary</h3><p>Readable result status, processing time, and clear warnings about model limitations.</p><span>REPORTING</span></article>
+      </div>
+    </section>
+    <section class="method" id="about"><div class="method-symbol">D×</div><div><div class="section-kicker">PROJECT NOTE</div><h2>Signals, not assumptions.</h2><p>DeepGuard X is an academic prototype. Reliable predictions require trained weights, representative test data, and evaluation on unseen media. A model score is not definitive proof of manipulation.</p></div></section>
+  </main>
+  <footer><span>DEEPGUARD X <span class="footer-dot">●</span> MCA AI/ML MINOR PROJECT</span><span>Built for responsible media verification</span></footer>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
